@@ -1,0 +1,43 @@
+---
+version: "3"
+
+volumes:
+  postgresql_data:
+
+services:
+  app:
+    build: .
+    environment:
+      - PYTHONUNBUFFERED
+      - APP_ENVIRONMENT
+      - APP_DEBUG
+      - APP_HOST
+      - APP_PORT
+      - APP_TIMEZONE
+      - DATABASE_URL=postgresql://postgres:pass@postgres:5432
+      - DATABASE_NAME=alpas
+    expose:
+      - ${APP_PORT}
+    ports:
+      - ${APP_PORT}:${APP_PORT}
+    volumes:
+      - ./src:/opt/alpas-ai-solution/src
+    depends_on:
+      - postgres
+    env_file:
+      - .env
+
+  postgres:
+    image: timescale/timescaledb:latest-pg13
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: alpas
+    volumes:
+      - postgresql_data:/var/lib/postgresql/data
+    expose:
+      - 5432
+    ports:
+      - 5432:5432
+    env_file:
+      - .env
