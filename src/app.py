@@ -4,7 +4,8 @@ import os
 from fastapi import FastAPI
 from src import settings
 from src.api.router import router
-# from src.utils import db
+from src.db.session import boot
+
 # from src.utils.init_app import init_controllers
 # from src.utils.init_app import init_repositories
 # from src.utils.init_app import init_services
@@ -12,7 +13,6 @@ from src.api.router import router
 
 
 logger = logging.getLogger(__name__)
-
 
 # Initialize FastAPI
 app = FastAPI(
@@ -29,13 +29,12 @@ async def startup():
     """
     Keep this order because services depends on repos.
     """
-    logger.info("Starting the app")
-    # await db.boot(app)
+    logger.info("startup: Starting the app")
+    await boot(app)
     # await init_repositories(app)
     # await init_services(app)
     # await init_use_cases(app)
     # await init_controllers(app)
-    # pass
 
 app.include_router(router, prefix='/v1')
 

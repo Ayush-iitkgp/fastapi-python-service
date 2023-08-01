@@ -1,8 +1,6 @@
 import os
 import time
-
 import uvicorn
-
 from src import settings
 
 # Setup timezone info

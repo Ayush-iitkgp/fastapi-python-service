@@ -14,7 +14,7 @@ services:
       - APP_HOST
       - APP_PORT
       - APP_TIMEZONE
-      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432
+      - DATABASE_URL=postgresql+asyncpg://postgres:postgres@postgres:5432/alpas
       - DATABASE_NAME=alpas
     expose:
       - ${APP_PORT}
