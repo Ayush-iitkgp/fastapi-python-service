@@ -1,2 +1,11 @@
+# Python
+__pycache__
+.mypy_cache
+.pytest_cache
 .venv
+*.pyc
+
+# IDE
 .idea
+.DS_Store
+.vscode/settings.json
