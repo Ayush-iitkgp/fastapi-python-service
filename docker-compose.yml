@@ -2,7 +2,7 @@
 version: "3"
 
 volumes:
-  postgresql_data:
+  postgres_data:
 
 services:
   app:
@@ -14,7 +14,7 @@ services:
       - APP_HOST
       - APP_PORT
       - APP_TIMEZONE
-      - DATABASE_URL=postgresql://postgres:pass@postgres:5432
+      - DATABASE_URL=postgresql://postgres:postgres@postgres:5432
       - DATABASE_NAME=alpas
     expose:
       - ${APP_PORT}
@@ -28,13 +28,13 @@ services:
       - .env
 
   postgres:
-    image: timescale/timescaledb:latest-pg13
+    image: postgres:12.7
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: pass
+      POSTGRES_PASSWORD: postgres
       POSTGRES_DB: alpas
     volumes:
-      - postgresql_data:/var/lib/postgresql/data
+      - postgres_data:/var/lib/postgresql/data
     expose:
       - 5432
     ports:

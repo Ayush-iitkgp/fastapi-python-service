@@ -13,4 +13,4 @@ COPY src src
 
 ENV PYTHONPATH /opt/alpas-ai-solution
 
-CMD ["python", "src/main.py"]
+CMD ["python", "src/bin/api.py"]

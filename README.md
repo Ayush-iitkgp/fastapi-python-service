@@ -20,6 +20,13 @@ Install project dependency
 
 `poetry install`
 
+## Create tables
+
+1. Connect to the database from local system using the url
+_localhost://postgres:postgres@postgres:5432/alpas_
+
+2. Run the SQL script in create_table.sql file located in the db folder
+
 #### Choice of the database
 
 For storing profit and loss statements of companies with multiple years' worth of data, a relational database is generally a suitable choice. 
@@ -27,3 +34,12 @@ Relational databases (SQL databases) are well-suited for handling structured dat
 They offer robust querying capabilities, support for complex data relationships, and transactions to ensure data integrity.
 
 Also, the data is time-series, we will use the relational database with time-series support. Hence the choice is PostgresSQL with TimescaleDB extension.
+
+TimescaleDB is optimized for insertion since the update event is very rare.
+
+Comparison on TimescaleDB Vs Mongo for time-series data:
+1. 260% higher insertion performance
+2. 54 times Faster queries
+3. Time oriented analytics functions (such as candle sticks)
+4. Stable and tested Postgres database
+5. Use PostgresSQl for non time-series data in the same database
