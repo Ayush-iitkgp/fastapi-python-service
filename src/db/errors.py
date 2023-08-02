@@ -1,7 +1,4 @@
-from src.exceptions.pnl import BaseError
-
-
-class BaseDBError(BaseError):
+class BaseDBError(Exception):
     pass
 
 

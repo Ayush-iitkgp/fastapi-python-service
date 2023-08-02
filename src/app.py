@@ -19,9 +19,6 @@ app = FastAPI(
 
 @app.on_event('startup')
 async def startup():
-    """
-    Keep this order because services depends on repos.
-    """
     logger.info("startup: Starting the app")
 
 app.include_router(pnl_router, prefix='/pnl')

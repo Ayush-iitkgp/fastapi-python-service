@@ -2,6 +2,9 @@ from src.db.tables.pnl import Currency
 from src.db.repositories.base import BaseRepository
 from src.models.currency import CurrencySchema, InCurrencySchema
 from typing import Type
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class CurrencyRepository(BaseRepository):
