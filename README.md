@@ -30,8 +30,6 @@ source ${PWD}/venv/bin/activate
 poetry install
 ```
 
-Just run `make install`. This will do necessary operations like installing required Python packages.
-
 ### Running
 
 ```bash
@@ -45,16 +43,16 @@ Your application will be accessible at <http://localhost:3000>.
 
 #### Create tables
 
-1. Exec into the docker container and connect to the database from local system using the url
+1. Exec into the docker container and connect to the database from container using the url
 _postgres://postgres:postgres@postgres:5432/alpas_
 
-2. Run the SQL script in create_table.sql file located in the db folder
+2. Run the SQL script in [create_table.sql](scripts/create_table.sql) file located in the db folder
 
 #### Insert data in the tables
 
 1. Exec into the docker container
 
-2. Change to `scripts` directory
+2. Change the working directory to `scripts` directory
 
 3. Run the command `python insert_data.json`
 
