@@ -22,6 +22,7 @@ services:
       - ${APP_PORT}:${APP_PORT}
     volumes:
       - ./src:/opt/alpas-ai-solution/src
+      - ./scripts:/opt/alpas-ai-solution/scripts
     depends_on:
       - postgres
     env_file:

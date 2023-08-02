@@ -1,12 +1,4 @@
 [[package]]
-name = "annotated-types"
-version = "0.5.0"
-description = "Reusable constraint types to use with typing.Annotated"
-category = "main"
-optional = false
-python-versions = ">=3.7"
-
-[[package]]
 name = "anyio"
 version = "3.7.1"
 description = "High level compatibility layer for multiple asynchronous event loop implementations"
@@ -120,30 +112,18 @@ python-versions = ">=3.6"
 
 [[package]]
 name = "pydantic"
-version = "2.1.1"
-description = "Data validation using Python type hints"
+version = "1.10.12"
+description = "Data validation and settings management using python type hints"
 category = "main"
 optional = false
 python-versions = ">=3.7"
 
 [package.dependencies]
-annotated-types = ">=0.4.0"
-pydantic-core = "2.4.0"
-typing-extensions = ">=4.6.1"
+typing-extensions = ">=4.2.0"
 
 [package.extras]
-email = ["email-validator (>=2.0.0)"]
-
-[[package]]
-name = "pydantic-core"
-version = "2.4.0"
-description = ""
-category = "main"
-optional = false
-python-versions = ">=3.7"
-
-[package.dependencies]
-typing-extensions = ">=4.6.0,<4.7.0 || >4.7.0"
+dotenv = ["python-dotenv (>=0.10.4)"]
+email = ["email-validator (>=1.0.3)"]
 
 [[package]]
 name = "sniffio"
@@ -226,10 +206,9 @@ standard = ["colorama (>=0.4)", "httptools (>=0.5.0)", "python-dotenv (>=0.13)",
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "98a7df284510993f71bcb8bf968102310fc31c61755feabe6b9658003b5bfc71"
+content-hash = "044d4462494eb63023b716a248166afbf29671cab1c57efc011839ef3c4a87a9"
 
 [metadata.files]
-annotated-types = []
 anyio = []
 asyncpg = []
 click = []
@@ -241,7 +220,6 @@ h11 = []
 idna = []
 psycopg2 = []
 pydantic = []
-pydantic-core = []
 sniffio = []
 sqlalchemy = []
 starlette = []

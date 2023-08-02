@@ -11,6 +11,8 @@ RUN pip install --upgrade pip && \
 
 COPY src src
 
+COPY scripts scripts
+
 ENV PYTHONPATH /opt/alpas-ai-solution
 
 CMD ["python", "src/bin/api.py"]

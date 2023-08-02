@@ -1,4 +1,8 @@
-class PnlError(Exception):
+class BaseError(Exception):
+    pass
+
+
+class PnlError(BaseError):
     pass
 
 

@@ -4,13 +4,6 @@ import os
 from fastapi import FastAPI
 from src import settings
 from src.api.router import router
-from src.db.session import boot
-
-# from src.utils.init_app import init_controllers
-# from src.utils.init_app import init_repositories
-# from src.utils.init_app import init_services
-# from src.utils.init_app import init_use_cases
-
 
 logger = logging.getLogger(__name__)
 
@@ -30,11 +23,6 @@ async def startup():
     Keep this order because services depends on repos.
     """
     logger.info("startup: Starting the app")
-    await boot(app)
-    # await init_repositories(app)
-    # await init_services(app)
-    # await init_use_cases(app)
-    # await init_controllers(app)
 
 app.include_router(router, prefix='/v1')
 
