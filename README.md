@@ -72,3 +72,29 @@ Comparison on TimescaleDB Vs Mongo for time-series data:
 3. Time oriented analytics functions (such as candle sticks)
 4. Stable and tested Postgres database
 5. Use PostgresSQl for non time-series data in the same database
+
+#### Scalability of the Database
+
+1. If companies is added to the data
+```bash
+# Add company table
+CREATE TABLE company (company_id SERIAL PRIMARY KEY, company_name VARCHAR(100) NOT NULL);
+# Add a column company id and a constraint in the pnl table
+company_id INTEGER NOT NULL,
+FOREIGN KEY (company_id) REFERENCES company (company_id)
+```
+
+2. More data gets added over time
+```bash
+# Use timescale DB extension with postgresSQL.
+# With the TimescaleDB hypertable, you can now efficiently store and query the profit
+# and loss data over time. TimescaleDB will automatically handle data partitioning, compression,
+# and indexing to optimize the performance of time-series queries, making it suitable for
+# managing large volumes of time-stamped data efficiently.
+
+# Change report_date column to type TIMESTAMP.
+# specify this column as the time-based dimension that will be used to partition and organize the time-series data efficiently.
+
+#Create a hypertable using TimescaleDB to optimize time-series data storage.
+SELECT create_hypertable('pnl', 'report_date');
+```
