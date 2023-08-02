@@ -5,7 +5,6 @@ from src.db.repositories.pnl import PnlRepository
 from src.db.repositories.currency import CurrencyRepository
 from src.models.currency import InCurrencySchema
 from src.models.pnl import InPnlSchema
-import uuid
 from src.db.session import async_session
 
 aw = asyncio.get_event_loop().run_until_complete
