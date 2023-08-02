@@ -1,33 +1,56 @@
-## Set up the project
+### Prerequisites
 
-The project uses Python version 3.10.8 or above
+Project requires works python 3.10.8, pyenv, colima, docker, and poetry.
 
 Install tool to manage python version `pyenv`
 
-`pyenv install 3.10.8`
+#### Install container runtime
 
-Have the docker running on the local machine
+```bash
+# install docker
+brew install docker
+brew link docker # optional
 
-`colima start`
+# install docker-compose
+brew install docker-compose
 
-Install Poetry 
+# install colima container run time
+brew install colima
+```
 
-Using poetry version 1.1.11
+#### Preparing
 
-`pip install poetry`
+```bash
+# Install required python version (defined in pyproject.toml)
+pyenv install $(cat .python-version)
 
-Install project dependency
+# Setup dependencies
+python3 -m venv ${PWD}/venv
+source ${PWD}/venv/bin/activate
+poetry install
+```
 
-`poetry install`
+Just run `make install`. This will do necessary operations like installing required Python packages.
 
-## Create tables
+### Running
+
+```bash
+# via docker
+colima start
+docker compose up -d
+```
+
+Your application will be accessible at <http://localhost:3000>.
+
+
+#### Create tables
 
 1. Exec into the docker container and connect to the database from local system using the url
 _postgres://postgres:postgres@postgres:5432/alpas_
 
 2. Run the SQL script in create_table.sql file located in the db folder
 
-## Insert data in the tables
+#### Insert data in the tables
 
 1. Exec into the docker container
 
