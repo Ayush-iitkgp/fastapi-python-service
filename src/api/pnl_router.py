@@ -7,16 +7,8 @@ from src.db.session import async_session
 from src.services.pnl_service import pnl_service
 router = APIRouter()
 
-
 @router.get(
-    path='/', status_code=status.HTTP_200_OK,
-)
-async def test():
-    return 'success'
-
-
-@router.get(
-    "pnl/{currency_id}/", status_code=status.HTTP_200_OK, response_model=OutDataPnlSchema
+    "/{currency_id}/", status_code=status.HTTP_200_OK, response_model=OutDataPnlSchema
 )
 async def get_pnl_for_currency(
     currency_id: uuid.UUID,
@@ -29,7 +21,7 @@ async def get_pnl_for_currency(
 
 
 @router.delete(
-    "pnl/{currency_id}/", status_code=status.HTTP_204_NO_CONTENT
+    "/{currency_id}/", status_code=status.HTTP_204_NO_CONTENT
 )
 async def get_pnl_for_currency(
     currency_id: uuid.UUID,

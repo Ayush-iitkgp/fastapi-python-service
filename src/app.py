@@ -3,8 +3,8 @@ import os
 
 from fastapi import FastAPI
 from src import settings
-from src.api.pnl_router import router
-
+from src.api.pnl_router import router as pnl_router
+from src.api.debug import router as debug_router
 logger = logging.getLogger(__name__)
 
 # Initialize FastAPI
@@ -24,6 +24,7 @@ async def startup():
     """
     logger.info("startup: Starting the app")
 
-app.include_router(router, prefix='/')
+app.include_router(pnl_router, prefix='/pnl')
+app.include_router(debug_router, prefix='/debug')
 
 BASE_DIR = os.path.dirname(__file__)
