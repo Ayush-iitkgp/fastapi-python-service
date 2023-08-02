@@ -58,13 +58,11 @@ _postgres://postgres:postgres@postgres:5432/alpas_
 
 #### Choice of the database
 
-For storing profit and loss statements of companies with multiple years' worth of data, a relational database is generally a suitable choice. 
-Relational databases (SQL databases) are well-suited for handling structured data with well-defined relationships between entities, such as financial statements. 
-They offer robust querying capabilities, support for complex data relationships, and transactions to ensure data integrity.
+For storing profit and loss statements of companies with multiple years of data, a relational database is a suitable choice. They offer robust querying capabilities, support for complex data relationships, and transactions to ensure data integrity.
 
-Also, the data is time-series, we will use the relational database with time-series support. Hence the choice is PostgresSQL with TimescaleDB extension.
+Also, the data is time-series, we can use the relational database with time-series support. Hence, the choice is PostgresSQL (with TimescaleDB extension when the data size increases).
 
-TimescaleDB is optimized for insertion since the update event is very rare.
+Also, TimescaleDB is optimized for insertion since the update event is very rare.
 
 Comparison on TimescaleDB Vs Mongo for time-series data:
 1. 260% higher insertion performance
