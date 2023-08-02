@@ -40,7 +40,7 @@
 					"variable": [
 						{
 							"key": "currencyId",
-							"value": "6ebad81f-3b4a-480f-8556-2cbbfd465eb1"
+							"value": "a6fb6440-54bf-4e18-8b67-5914cf0debda"
 						}
 					]
 				}
@@ -70,6 +70,41 @@
 				}
 			},
 			"response": []
+		}
+	],
+	"auth": {
+		"type": "basic",
+		"basic": [
+			{
+				"key": "password",
+				"value": "pass",
+				"type": "string"
+			},
+			{
+				"key": "username",
+				"value": "admin",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
 		}
 	],
 	"variable": [

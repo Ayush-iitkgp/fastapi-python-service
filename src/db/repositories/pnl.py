@@ -6,7 +6,6 @@ from src.models.pnl import PnlSchema, InPnlSchema
 from typing import Type, List
 from uuid import UUID
 from sqlalchemy import delete, select
-from src.db.errors import DoesNotExist
 
 logger = logging.getLogger(__name__)
 
