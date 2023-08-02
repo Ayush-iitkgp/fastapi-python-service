@@ -85,9 +85,9 @@ FOREIGN KEY (company_id) REFERENCES company (company_id)
 2. More data gets added over time
 ```bash
 # Use timescale DB extension with postgresSQL.
-# With the TimescaleDB hypertable, you can now efficiently store and query the profit
-# and loss data over time. TimescaleDB will automatically handle data partitioning, compression,
-# and indexing to optimize the performance of time-series queries, making it suitable for
+# With the TimescaleDB hypertable, we can efficiently store and query the data
+# over time. TimescaleDB will also automatically handle data partitioning, compression,
+# and indexing to optimize the performance of time-series queries, thus making it suitable for
 # managing large volumes of time-stamped data efficiently.
 
 # Change report_date column to type TIMESTAMP.
