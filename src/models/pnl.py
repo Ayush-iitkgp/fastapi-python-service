@@ -5,8 +5,8 @@ from uuid import UUID
 
 class PnlSchemaBase(BaseSchema):
     currency_id: UUID
-    data_key: str
-    data_value: float
+    financial_item: str
+    financial_value: float
     report_date: date
 
 

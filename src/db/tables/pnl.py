@@ -17,8 +17,8 @@ class Pnl(Base):
 
     id = Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
     currency_id = Column(UUID(as_uuid=True), ForeignKey('currency.id'), nullable=False)
-    data_key = Column(String(50), nullable=False)
-    data_value = Column(Numeric, nullable=False)
+    financial_item = Column(String(50), nullable=False)
+    financial_value = Column(Numeric(15, 3), nullable=False)
     report_date = Column(Date, nullable=False)
 
     # Define the relationship to the Currency table

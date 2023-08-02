@@ -22,11 +22,11 @@ async def main():
 
                 pnl_repository = PnlRepository(db_session=db)
                 pnl_data = currency_data["data"]
-                for data_key, data_value in pnl_data.items():
-                    for report_date_str, value in data_value.items():
+                for financial_item, financial_value in pnl_data.items():
+                    for report_date_str, value in financial_value.items():
                         report_date = datetime.strptime(report_date_str, "%Y-%m-%d").date()
-                        pnl = InPnlSchema(currency_id=inserted_currency.id, data_key=data_key,
-                                        data_value=value, report_date=report_date)
+                        pnl = InPnlSchema(currency_id=inserted_currency.id, financial_item=financial_item,
+                                        financial_value=value, report_date=report_date)
                         await pnl_repository.create(values=pnl, commit=False)
                 await db.commit()
 
