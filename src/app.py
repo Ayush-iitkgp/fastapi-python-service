@@ -3,7 +3,7 @@ import os
 
 from fastapi import FastAPI
 from src import settings
-from src.api.router import router
+from src.api.pnl_router import router
 
 logger = logging.getLogger(__name__)
 
@@ -24,6 +24,6 @@ async def startup():
     """
     logger.info("startup: Starting the app")
 
-app.include_router(router, prefix='/v1')
+app.include_router(router, prefix='/')
 
 BASE_DIR = os.path.dirname(__file__)

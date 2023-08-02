@@ -14,7 +14,7 @@ async def main():
     with open('data/financial_data.json') as json_file:
         data = json.load(json_file)
         async with async_session() as db:
-            async with db.begin_nested():
+            async with db.begin():
                 currency_repository = CurrencyRepository(db_session=db)
                 currency_data = data["pnl"]["MXN"]
                 currency = InCurrencySchema(currency_code=currency_data["currency"])
