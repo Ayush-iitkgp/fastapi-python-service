@@ -96,3 +96,7 @@ FOREIGN KEY (company_id) REFERENCES company (company_id)
 #Create a hypertable using TimescaleDB to optimize time-series data storage.
 SELECT create_hypertable('pnl', 'report_date');
 ```
+
+#### Possible future improvements
+1. Write (more) tests
+2. Implement CI/CD Pipeline
