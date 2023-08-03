@@ -1,6 +1,6 @@
 ### Prerequisites
 
-Project requires works python 3.10.8, pyenv, colima, docker, and poetry.
+Project requires python 3.10.8, pyenv, colima, docker, and poetry.
 
 Install tool to manage python version `pyenv`
 
@@ -18,7 +18,7 @@ brew install docker-compose
 brew install colima
 ```
 
-#### Preparing
+#### Preparing (Optional)
 
 ```bash
 # Install required python version (defined in pyproject.toml)
