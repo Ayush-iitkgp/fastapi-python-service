@@ -99,5 +99,5 @@ SELECT create_hypertable('pnl', 'report_date');
 
 #### Possible future improvements
 - [x] Implement Authentication - **DONE**
-- [] Write (more) tests
-- [] Implement CI/CD Pipeline
+- Write (more) tests
+- Implement CI/CD Pipeline
