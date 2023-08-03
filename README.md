@@ -75,7 +75,7 @@ As pytest convention, all files matching `test_*.py` will be included.
 #### Running tests
 ```bash
 docker-compose run app bash
-poetry run pytest -vv tests
+poetry run pytest
 ```
 
 #### Choice of the database
