@@ -219,6 +219,20 @@ tomli = {version = ">=1.0.0", markers = "python_version < \"3.11\""}
 testing = ["argcomplete", "attrs (>=19.2.0)", "hypothesis (>=3.56)", "mock", "nose", "pygments (>=2.7.2)", "requests", "setuptools", "xmlschema"]
 
 [[package]]
+name = "pytest-asyncio"
+version = "0.15.1"
+description = "Pytest support for asyncio."
+category = "dev"
+optional = false
+python-versions = ">= 3.6"
+
+[package.dependencies]
+pytest = ">=5.4.0"
+
+[package.extras]
+testing = ["coverage", "hypothesis (>=5.7.1)"]
+
+[[package]]
 name = "rfc3986"
 version = "1.5.0"
 description = "Validating URI References per RFC 3986"
@@ -321,7 +335,7 @@ standard = ["colorama (>=0.4)", "httptools (>=0.5.0)", "python-dotenv (>=0.13)",
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "405d1fdfd00327d6a148a5e87844b7e33f01959a61bd9635123df4437e5e6c2b"
+content-hash = "476d703ab5bbdcab9f46421a903ed24a0a8440c8ce2e1fef96355e7e89e5f30d"
 
 [metadata.files]
 anyio = []
@@ -342,6 +356,7 @@ pluggy = []
 psycopg2 = []
 pydantic = []
 pytest = []
+pytest-asyncio = []
 rfc3986 = []
 sniffio = []
 sqlalchemy = []
