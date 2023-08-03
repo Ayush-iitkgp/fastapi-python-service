@@ -2,16 +2,12 @@ from os import getenv
 
 TITLE = "Alpas AI Solution"
 DESCRIPTION = "Lighting fast API for Alpas AI Solution"
-ENVIRONMENT = getenv('APP_ENVIRONMENT', '')
-RELEASE = getenv('GIT_HASH_SHORT', 'NONE')
 
 PORT = int(getenv('APP_PORT', '3000'))
 HOST = getenv('APP_HOST')
-DEBUG = getenv('APP_DEBUG') == '1'
 
-TIMEZONE = getenv('APP_TIMEZONE', 'UTC')  # Default is 'UTC'
 DATABASE_URL = getenv('DATABASE_URL')
 DATABASE_NAME = getenv('DATABASE_NAME')
 DATABASE_POOL_SIZE = int(getenv('DATABASE_POOL_SIZE'))
-ADMIN_AUTH_USERNAME=getenv('ADMIN_AUTH_USERNAME')
-ADMIN_AUTH_PASSWORD=getenv('ADMIN_AUTH_PASSWORD')
+ADMIN_AUTH_USERNAME = getenv('ADMIN_AUTH_USERNAME')
+ADMIN_AUTH_PASSWORD = getenv('ADMIN_AUTH_PASSWORD')
