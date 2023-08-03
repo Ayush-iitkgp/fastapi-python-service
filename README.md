@@ -57,11 +57,11 @@ docker-compose up -d
 ```bash
 docker-compose run app bash
 ```
-3.Change the working directory to `scripts` directory
+3. Change the working directory to `scripts` directory
 ```bash
 cd scripts
 ```
-4.Run the python command 
+4. Run the python command 
 ```bash
 python insert_data.json
 ```
