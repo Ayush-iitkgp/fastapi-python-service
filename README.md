@@ -120,6 +120,7 @@ SELECT create_hypertable('pnl', 'report_date');
 ```
 
 #### Possible future improvements
-- [x] Implement Authentication - **DONE**
-- Write (more) tests
+- Implement Authentication - **DONE**
+- Write (more) tests and fix the not working test
 - Implement CI/CD Pipeline
+- Github hooks for formatting the code
