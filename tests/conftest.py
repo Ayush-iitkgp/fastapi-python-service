@@ -1,12 +1,10 @@
-import asyncio
-from typing import AsyncGenerator, Dict, Generator
+from typing import AsyncGenerator
 
 import pytest
 from fastapi import FastAPI
 from httpx import AsyncClient
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from src import settings
 from src.db.base_class import Base
 from src.db.session import async_session, engine
 
