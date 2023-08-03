@@ -38,8 +38,7 @@ colima start
 docker compose up -d
 ```
 
-Your application will be accessible at <http://localhost:3000>.
-
+The application is accessible at <http://localhost:3000>.
 
 ### Create tables
 
@@ -50,11 +49,34 @@ _localhost://postgres:postgres@postgres:5432/alpas_
 
 ### Insert data in the tables
 
-1. Exec into the docker container
+1. Start the containers
+```bash
+docker-compose up -d
+```
+2. Exec into the docker container
+```bash
+docker-compose run app bash
+```
+3.Change the working directory to `scripts` directory
+```bash
+cd scripts
+```
+4.Run the python command 
+```bash
+python insert_data.json
+```
 
-2. Change the working directory to `scripts` directory
+### Testing
 
-3. Run the command `python insert_data.json`
+`pytest` will run all unit tests that you specify in your codebase.
+
+As pytest convention, all files matching `test_*.py` will be included.
+
+#### Running tests
+```bash
+docker-compose run app bash
+poetry run pytest -vv tests
+```
 
 #### Choice of the database
 

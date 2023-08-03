@@ -23,6 +23,7 @@ services:
     volumes:
       - ./src:/opt/alpas-ai-solution/src
       - ./scripts:/opt/alpas-ai-solution/scripts
+      - ./tests:/opt/alpas-ai-solution/tests
     depends_on:
       - postgres
     env_file:

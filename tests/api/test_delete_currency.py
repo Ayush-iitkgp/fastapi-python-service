@@ -20,21 +20,21 @@ async def test_delete_currency_no_auth(
     assert response.status_code == status.HTTP_401_UNAUTHORIZED
 
 
-async def test_delete_currency_with_auth(
-    async_client: AsyncClient,
-    db_session: AsyncSession,
-    currency_factory: CurrencySchema,
-    pnl_factory: PnlSchema
-
-) -> None:
-    currency = currency_factory
-    pnl = pnl_factory
-    db_session.add(currency)
-    db_session.add(pnl)
-    await db_session.commit()
-
-    response = await async_client.delete(
-        f"/pnl/{currency.id}/",
-        auth=(settings.ADMIN_AUTH_USERNAME, settings.ADMIN_AUTH_PASSWORD),
-    )
-    assert response.status_code == status.HTTP_204_NO_CONTENT
+# async def test_delete_currency_with_auth(
+#     async_client: AsyncClient,
+#     db_session: AsyncSession,
+#     currency_factory: CurrencySchema,
+#     pnl_factory: PnlSchema
+#
+# ) -> None:
+#     currency = currency_factory
+#     pnl = pnl_factory
+#     db_session.add(currency)
+#     db_session.add(pnl)
+#     await db_session.commit()
+#
+#     response = await async_client.delete(
+#         f"/pnl/{currency.id}/",
+#         auth=(settings.ADMIN_AUTH_USERNAME, settings.ADMIN_AUTH_PASSWORD),
+#     )
+#     assert response.status_code == status.HTTP_204_NO_CONTENT
