@@ -20,7 +20,7 @@ async def test_delete_currency_no_auth(
     assert response.status_code == status.HTTP_401_UNAUTHORIZED
 
 
-async def test_delete_unlocks_benefits(
+async def test_delete_currency_with_auth(
     async_client: AsyncClient,
     db_session: AsyncSession,
     currency_factory: CurrencySchema,
