@@ -2,7 +2,7 @@
 
 Project requires python 3.10.8, pyenv, colima, docker, and poetry.
 
-Install tool to manage python version `pyenv`
+Install `pyenv` tool to manage python version.
 
 #### Install container runtime
 
@@ -63,7 +63,7 @@ cd scripts
 ```
 4. Run the python command 
 ```bash
-python insert_data.json
+python insert_data.py
 ```
 
 ### Testing
