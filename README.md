@@ -18,18 +18,6 @@ brew install docker-compose
 brew install colima
 ```
 
-#### Preparing (Optional)
-
-```bash
-# Install required python version (defined in pyproject.toml)
-pyenv install $(cat .python-version)
-
-# Setup dependencies
-python3 -m venv ${PWD}/venv
-source ${PWD}/venv/bin/activate
-poetry install
-```
-
 ### Running
 
 ```bash
