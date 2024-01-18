@@ -4,7 +4,7 @@ import uvicorn
 from src import settings
 
 # Setup timezone info
-os.environ['TZ'] = settings.TIMEZONE
+# os.environ['TZ'] = settings.TIMEZONE
 time.tzset()
 
 if __name__ == '__main__':
