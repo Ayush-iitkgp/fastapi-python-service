@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "alpas-ai-solution"
+name = "fastapi-python-service"
 version = "0.1.0"
-description = "Solution for the Alpas AI recruitment"
+description = "Fast API Python Service"
 authors = ["Ayush Pandey <ayushpandey.iitkgp@gmail.com>"]
 
 [tool.poetry.dependencies]

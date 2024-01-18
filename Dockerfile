@@ -1,6 +1,6 @@
 FROM python:3.10-buster
 
-WORKDIR /opt/alpas-ai-solution
+WORKDIR /opt/fastapi-python-service
 
 COPY poetry.lock pyproject.toml ./
 
@@ -15,6 +15,6 @@ COPY scripts scripts
 
 COPY tests tests
 
-ENV PYTHONPATH /opt/alpas-ai-solution
+ENV PYTHONPATH /opt/fastapi-python-service
 
 CMD ["python", "src/bin/api.py"]

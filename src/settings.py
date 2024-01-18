@@ -1,7 +1,7 @@
 from os import getenv
 
-TITLE = "Alpas AI Solution"
-DESCRIPTION = "Lighting fast API for Alpas AI Solution"
+TITLE = "FastAPI Python Service"
+DESCRIPTION = "Lighting fast Python API"
 
 PORT = int(getenv('APP_PORT', '3000'))
 HOST = getenv('APP_HOST')
